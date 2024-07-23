@@ -1,0 +1,65 @@
+[
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    content = readBook(path_to_file)\n    wordNum = getWordLength(content)\n    charHash = getCharHash(content)\n    listOfHash = hashToList(charHash)\n    print(f\"--- Begin report of {path_to_file} ---\")\n    print(f\"{wordNum} words found in the document\")\n    print()\n    for dict in listOfHash:\n        print(f\"The {dict['char']} character was found {dict['num']} times\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "getWordLength",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def getWordLength(txt):\n    wordlist = txt.split()\n    return len(wordlist)       \ndef readBook(path):\n    with open(path) as f:\n        return f.read()\ndef getCharHash(txt):\n    cleanTxt = txt.replace(\" \", \"\")\n    hash = {}\n    for l in cleanTxt:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "readBook",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def readBook(path):\n    with open(path) as f:\n        return f.read()\ndef getCharHash(txt):\n    cleanTxt = txt.replace(\" \", \"\")\n    hash = {}\n    for l in cleanTxt:\n        lowL = l.lower()\n        if lowL in hash:\n            hash[lowL] += 1",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "getCharHash",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def getCharHash(txt):\n    cleanTxt = txt.replace(\" \", \"\")\n    hash = {}\n    for l in cleanTxt:\n        lowL = l.lower()\n        if lowL in hash:\n            hash[lowL] += 1\n            continue\n        hash[lowL] =1\n    return hash",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "sort_on",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def sort_on(d):\n    return d[\"num\"]\ndef hashToList(hash):\n    output = []\n    for key in hash:\n        if key.isalpha():\n            output.append({\"char\":key,\"num\":hash[key]})\n    output.sort(reverse=True,key=sort_on)\n    return output\nmain()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "hashToList",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def hashToList(hash):\n    output = []\n    for key in hash:\n        if key.isalpha():\n            output.append({\"char\":key,\"num\":hash[key]})\n    output.sort(reverse=True,key=sort_on)\n    return output\nmain()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "path_to_file",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "path_to_file = \"books/frankenstein.txt\"\ndef main():\n    content = readBook(path_to_file)\n    wordNum = getWordLength(content)\n    charHash = getCharHash(content)\n    listOfHash = hashToList(charHash)\n    print(f\"--- Begin report of {path_to_file} ---\")\n    print(f\"{wordNum} words found in the document\")\n    print()\n    for dict in listOfHash:",
+        "detail": "main",
+        "documentation": {}
+    }
+]
